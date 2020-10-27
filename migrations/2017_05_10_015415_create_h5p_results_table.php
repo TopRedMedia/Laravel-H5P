@@ -17,7 +17,7 @@ class CreateH5pResultsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->bigInteger('content_id')->unsigned();
-            $table->string('subcontent_id', 50)->nullable()->unsigned();
+            $table->bigInteger('subcontent_id')->nullable()->unsigned();
             $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('score')->unsigned();
             $table->bigInteger('max_score')->unsigned();
@@ -25,10 +25,10 @@ class CreateH5pResultsTable extends Migration
             $table->dateTime('finished')->nullable();
             $table->bigInteger('time')->unsigned();
 
-            $table->text('description', 65535)->nullable();
-            $table->text('correct_responses_pattern', 65535)->nullable();
-            $table->text('response', 65535)->nullable();
-            $table->text('additionals', 65535)->nullable();
+            $table->text('description')->nullable();
+            $table->text('correct_responses_pattern')->nullable();
+            $table->text('response')->nullable();
+            $table->text('additionals')->nullable();
 
             $table->index(['content_id', 'user_id'], 'content_user');
             $table->index(['content_id', 'subcontent_id', 'user_id'], 'content_subcontent_user');

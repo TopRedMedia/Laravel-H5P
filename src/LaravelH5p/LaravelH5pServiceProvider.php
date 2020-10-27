@@ -45,6 +45,8 @@ class LaravelH5pServiceProvider extends \Illuminate\Support\ServiceProvider
             'command.laravel-h5p.migration',
             'command.laravel-h5p.reset',
         ]);
+
+        $this->loadMigrationsFrom(__DIR__.'/../../migrations');
     }
 
     /**
